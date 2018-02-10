@@ -12,7 +12,7 @@ html,body,div,ul,ol,li,p,h1,h2,h3,h4{
     background-color: #2c2b5d;
     color:white;
     top:0;
-    height: 500px;
+    height: 100%;
     min-width: 110px;
 }
 .main-menu h2 {
@@ -34,13 +34,14 @@ html,body,div,ul,ol,li,p,h1,h2,h3,h4{
     width:90%;
     left:10%;
     top:0;
+    height: 100%
 }
 .articles-titels-container {
     background-color: #2c2b5d;
     width: 20%;
     float: left;
     border-left: solid 1px white;
-    height: 500px;
+    height: 100%;
 }
 .articles-titels-container a
 {
@@ -51,6 +52,9 @@ html,body,div,ul,ol,li,p,h1,h2,h3,h4{
     list-style-type: none;
     padding: 5px 15px;
     border-bottom: solid 1px white;
+}
+.articles-titels-container ul li:first-child {
+    border-top: solid 1px white;
 }
 .articles-titels-container ul li:hover {
     background-color: teal;
@@ -82,4 +86,11 @@ html,body,div,ul,ol,li,p,h1,h2,h3,h4{
 }
 .article-loader{
     
+}
+.button-menu{
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    padding: 8px 10px;
+    color: white;
 }

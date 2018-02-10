@@ -10,5 +10,5 @@ export default store=>next=>action=>{
     .then(res=>res.json())
     .then(response=>next({...rest, type:type+SUCSSES, response}))
     .catch(error=>next({...rest,type:type+FAIL, error}))}
-    ,20000)
+    ,2000)
     }

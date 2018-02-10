@@ -7,6 +7,7 @@ import {filtratedArticlesSelector} from "./selectors"
 import {loadAllArticles}from "./AC"
 import Loader from "./Loader"
 import {NavLink} from "react-router-dom"
+import Filter from "./Filters/Filter"
  class ArticleList extends React.Component {
     static propTypes = {
         articles: PropTypes.array.isRequired
@@ -25,6 +26,7 @@ import {NavLink} from "react-router-dom"
         });
         return (
             <div className="articles-titels-container">
+            <Filter/>
                 <ul>
                     {artList}
                 </ul>
