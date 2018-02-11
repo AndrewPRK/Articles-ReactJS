@@ -27,15 +27,15 @@ class CommentList extends React.Component {
         if (!this.props.Open) { return null; }
         if (this.props.article.commentsLoading){return <Loader className="comment-loader"/>}
         if (!this.props.article.commentsLoaded) { return null; }
-        if (!this.props.article.comments || !this.props.article.comments.length) { 
-            return (<p>No comments</p>); 
-        }
+        
         var commentList = this.props.article.comments.map(function(id) {
              return (<li key = {id}><Comment id = {id} /></li>) 
         });
         return (
             <div>
-                <ul className="comment-list">{commentList}</ul>
+               
+                {(!this.props.article.comments || !this.props.article.comments.length) ? <p>No comments</p> : 
+                 <ul className="comment-list">{commentList}</ul>}
                 <CommentForm articleId = {this.props.article.id}/>
             </div>
         );
