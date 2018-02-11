@@ -17,10 +17,25 @@ class CommentForm extends React.Component
     }
     render() {
         return (
-            <form onSubmit={this.handlerSubmit}>
-                User: <input value={this.state.user} onChange={this.handlerChange("user")} className={this.getClassName("user")} />
-                Comment text: <input value={this.state.text} onChange={this.handlerChange("text")} className={this.getClassName("text")} />
-                <input type="submit" value ="submit"/>
+            <form onSubmit={this.handlerSubmit} className="comment-form">
+                <ul>
+                    <li>
+                        <h2>Add comment</h2>
+                    </li>
+                    <li>
+                        <label for="name">User:</label> 
+                        <input  value={this.state.user} name="name" onChange={this.handlerChange("user") } 
+                                className={this.getClassName("user")} />
+                    </li>
+                    <li>
+                        <label for="commentText">Comment text:</label> 
+                        <textarea   value={this.state.text} name="commentText" onChange={this.handlerChange("text")} 
+                                    className={this.getClassName("text")} cols="40" rows="6"/>
+                    </li>
+                    <li>
+                        <button type="submit" className="comment-submit">Send Comment</button>
+                    </li>
+                </ul>
             </form>
             )
     }

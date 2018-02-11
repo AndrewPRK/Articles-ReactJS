@@ -6,7 +6,7 @@ import {commentSelectorFactory} from "./selectors"
     return (
         
         <div>
-            <p>{props.comment.text} <b>by {props.comment.user}</b></p>
+            <p>{props.comment.text} <br/><b>by {props.comment.user}</b></p>
         </div>
     ); 
 }

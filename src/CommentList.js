@@ -22,7 +22,7 @@ class CommentList extends React.Component
     );}
          getBody(props) {
             if (!this.props.Open) { return null; }
-            if (this.props.article.commentsLoading){return <Loader className="article-loader"/>}
+            if (this.props.article.commentsLoading){return <Loader className="comment-loader"/>}
             if (!this.props.article.commentsLoaded) { return null; }
             if (!this.props.article.comments || !this.props.article.comments.length) { return (<p>No comments</p>); }
             var commentList =this.props.article.comments.map(function (id) { return (<li key={id}><Comment id={id} /></li>) });

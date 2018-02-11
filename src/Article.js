@@ -36,7 +36,7 @@ import Loader from "./Loader"
                 >
                     {this.getBody()}
                 </CSSTransitionGroup>
-                <button onClick={this.hendleDelete}>Delete</button>
+                <button className="delete-article" onClick={this.hendleDelete}>Delete article</button>
             </div>);
     };
     hendleDelete=()=>{
@@ -48,7 +48,7 @@ import Loader from "./Loader"
             return null;
         }
         if(this.props.article.loading){
-            return(<Loader/>)
+            return(<Loader className="article-loader"/>)
         }
         
         return (<div>

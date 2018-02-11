@@ -18,7 +18,7 @@ import Filter from "./Filters/Filter"
        if(!loaded&&!loading) loadAllArticles();
    }
     render() {
-        if (this.props.loading)return(<Loader className="article-loader"/>)
+        if (this.props.loading)return(<Loader className="articles-tytles-loader"/>)
         let artList = this.props.articles.map(item =>{
             return (
                 <li key= {item.id}><NavLink to={`/articles/${item.id}`} activeStyle={{color:"red"}} >{item.title}</NavLink></li>
