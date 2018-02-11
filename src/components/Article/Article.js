@@ -1,5 +1,4 @@
 import React from "react"
-import ReactDOM from "react-dom"
 import CommentList from "../CommentList/CommentList"
 import PropTypes from "prop-types"
 import { CSSTransitionGroup } from "react-transition-group"
@@ -8,7 +7,7 @@ import {connect} from "react-redux"
 import {deleteArticle,loadArticle} from "../../AC"
 import Loader from "../Loader/Loader"
 
-  class Article extends React.Component {
+class Article extends React.Component {
     static propTypes = {
         article: PropTypes.shape(
         {
@@ -16,12 +15,16 @@ import Loader from "../Loader/Loader"
         text: PropTypes.string
         })
     };
-    componentDidMount(){
-        const{loadArticle,article, ArticleId}=this.props;
-        if (!article||(!article.text && !article.loading)){loadArticle(ArticleId)}
+
+    componentDidMount() {
+        const{loadArticle, article, ArticleId} = this.props;
+        if(!article || (!article.text && !article.loading)){
+            loadArticle(ArticleId)
+        }
     }
+
     render() {
-        if(!this.props.article||!this.props.articlesTitleLoaded) return null;
+        if(!this.props.article || !this.props.articlesTitleLoaded) return null;
         return (
             <div className="article-container">
                 <h3 className="article-title">{this.props.article.title}</h3>
@@ -32,13 +35,14 @@ import Loader from "../Loader/Loader"
                 >
                     {this.getBody()}
                 </CSSTransitionGroup>
-                <button className="delete-article" onClick={this.hendleDelete}>Delete article</button>
+                <button className="delete-article" onClick = {this.hendleDelete}>Delete article</button>
             </div>);
     };
-    hendleDelete=()=>{
-        
-                this.props.deleteArticle(this.props.article.id);
-                }
+
+    hendleDelete = () => {
+        this.props.deleteArticle(this.props.article.id);
+    };
+
     getBody() {
         if (!this.props.Open) {
             return null;
@@ -47,14 +51,15 @@ import Loader from "../Loader/Loader"
             return(<Loader className="article-loader"/>)
         }
         
-        return (<div>
+        return (
+        <div>
             <div className="article-content">{this.props.article.text}</div>
-            <CommentList article={this.props.article} />
-        </div>);
-    }
-    
+            <CommentList article = {this.props.article} />
+        </div>
+        );
+    };
 }
-export default connect((state, ownProps)=> ({   article:state.articleState.entities.get(ownProps.ArticleId),
-                                                articlesTitleLoaded:state.articleState.loaded})
-, {deleteArticle,loadArticle})(Article)
+
+export default connect((state, ownProps) => ({article: state.articleState.entities.get(ownProps.ArticleId),
+articlesTitleLoaded: state.articleState.loaded}), {deleteArticle, loadArticle})(Article)
 

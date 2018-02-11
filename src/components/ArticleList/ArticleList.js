@@ -1,5 +1,4 @@
 import React from "react"
-import Article from "../Article/Article"
 import PropTypes from "prop-types"
 import {connect} from "react-redux"
 import {filtratedArticlesSelector} from "../../selectors"
@@ -9,22 +8,26 @@ import {NavLink} from "react-router-dom"
 import Filter from "../Filters/Filter"
 import "./styles.css"
 
- class ArticleList extends React.Component {
+class ArticleList extends React.Component {
     static propTypes = {
         articles: PropTypes.array.isRequired
     };
-   componentDidMount()
-   {
-        const{loaded,loading,loadAllArticles}=this.props
-       if(!loaded&&!loading) loadAllArticles();
-   }
+
+   componentDidMount() {
+    const{loaded, loading, loadAllArticles} = this.props
+    if(!loaded && !loading) loadAllArticles();
+    }
+
     render() {
-        if (this.props.loading)return(<Loader className="articles-tytles-loader"/>)
-        let artList = this.props.articles.map(item =>{
+        if (this.props.loading) return(<Loader className="articles-tytles-loader"/>)
+        let artList = this.props.articles.map(item => {
             return (
-                <li key= {item.id}><NavLink to={`/articles/${item.id}`} activeStyle={{color:"#d6ff00"}} >{item.title}</NavLink></li>
+                <li key = {item.id}><NavLink to = {`/articles/${item.id}`} 
+                    activeStyle = {{color:"#d6ff00"}} >{item.title}</NavLink>
+                </li>
             )
         });
+
         return (
             <div className="articles-titels-container">
             <Filter/>
@@ -33,14 +36,12 @@ import "./styles.css"
                 </ul>
             </div>
         );
-    };
-   
-    
+    };    
 };
-export default connect((state)=>{
+
+export default connect((state) => {
     return {
-articles:filtratedArticlesSelector(state) ,
-loading:state.articleState.loading,
-loaded:state.articleState.loaded 
-}
-},{loadAllArticles})(ArticleList);
+        articles: filtratedArticlesSelector(state) ,
+        loading: state.articleState.loading,
+        loaded: state.articleState.loaded 
+    }}, {loadAllArticles})(ArticleList);

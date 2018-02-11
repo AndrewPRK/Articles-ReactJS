@@ -1,18 +1,17 @@
-.Select
-{
+.Select {
     margin: 10px auto;
     width: 90%;
 }
-.DayPicker-Day{
+.DayPicker-Day {
     padding: 0.3rem;
     
 }
-.date-range{
+.date-range {
     width: 90%;
     margin: 0 auto;
     color: white;
 }
-.DayPicker{
+.DayPicker {
     width: 100%;
     color:white;
 }

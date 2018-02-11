@@ -10,7 +10,6 @@ export default class Filter extends React.Component {
                 <FilterSelect className="filter-select"/>
                 <Calendar className="filter-calendar"/>
             </div>
-            );
+        );
     }
-
 }
