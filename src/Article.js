@@ -21,14 +21,10 @@ import Loader from "./Loader"
         if (!article||(!article.text && !article.loading)){loadArticle(ArticleId)}
     }
     render() {
-        if(!this.props.article) return null;
+        if(!this.props.article||!this.props.articlesTitleLoaded) return null;
         return (
             <div className="article-container">
                 <h3 className="article-title">{this.props.article.title}</h3>
-                {/* <button onClick={this.props.showToggle}>
-                    {this.props.Open ? "Close" : "Open"}
-                </button> */}
-                
                 <CSSTransitionGroup
                     transitionName="article"
                     transitionEnterTimeout={500}
@@ -58,6 +54,7 @@ import Loader from "./Loader"
     }
     
 }
-export default connect((state, ownProps)=> ({ article:state.articleState.entities.get(ownProps.ArticleId)})
+export default connect((state, ownProps)=> ({   article:state.articleState.entities.get(ownProps.ArticleId),
+                                                articlesTitleLoaded:state.articleState.loaded})
 , {deleteArticle,loadArticle})(Article)
 
