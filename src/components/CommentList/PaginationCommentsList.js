@@ -1,8 +1,8 @@
 import React from "react"
-import Comment from "./Comment"
+import Comment from "../Comment/Comment"
 import {connect} from "react-redux"
-import {loadAllComments} from "./AC"
-import Loader from "./Loader"
+import {loadAllComments} from "../../AC"
+import Loader from "../Loader/Loader"
 import {NavLink} from "react-router-dom"
  class PaginationCommentsList extends React.Component
 {

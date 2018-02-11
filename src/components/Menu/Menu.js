@@ -1,4 +1,5 @@
 import React from "react"
+import "./styles.css"
 import {NavLink,Link} from "react-router-dom"
 export default (props) => {
     return (

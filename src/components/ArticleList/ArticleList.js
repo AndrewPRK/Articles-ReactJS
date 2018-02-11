@@ -1,13 +1,14 @@
 import React from "react"
-import Article from "./Article"
+import Article from "../Article/Article"
 import PropTypes from "prop-types"
-import AccordionWrapper from "./AccordionWrapper"
 import {connect} from "react-redux"
-import {filtratedArticlesSelector} from "./selectors"
-import {loadAllArticles}from "./AC"
-import Loader from "./Loader"
+import {filtratedArticlesSelector} from "../../selectors"
+import {loadAllArticles}from "../../AC"
+import Loader from "../Loader/Loader"
 import {NavLink} from "react-router-dom"
-import Filter from "./Filters/Filter"
+import Filter from "../Filters/Filter"
+import "./styles.css"
+
  class ArticleList extends React.Component {
     static propTypes = {
         articles: PropTypes.array.isRequired

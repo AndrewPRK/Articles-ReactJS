@@ -1,12 +1,12 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import CommentList from "./CommentList"
+import CommentList from "../CommentList/CommentList"
 import PropTypes from "prop-types"
 import { CSSTransitionGroup } from "react-transition-group"
-import "./article.css"
+import "./styles.css"
 import {connect} from "react-redux"
-import {deleteArticle,loadArticle} from "./AC"
-import Loader from "./Loader"
+import {deleteArticle,loadArticle} from "../../AC"
+import Loader from "../Loader/Loader"
 
   class Article extends React.Component {
     static propTypes = {

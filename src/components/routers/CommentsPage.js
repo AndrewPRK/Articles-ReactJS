@@ -1,5 +1,5 @@
 import React,{Component} from "react"
-import PaginationCommentsList from "../PaginationCommentsList"
+import PaginationCommentsList from "../CommentList/PaginationCommentsList"
 import {Route,Redirect} from "react-router-dom"
 export default function CommentPage ({match}) 
 {

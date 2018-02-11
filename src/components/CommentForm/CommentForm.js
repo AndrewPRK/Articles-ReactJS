@@ -1,6 +1,6 @@
 import React from "react"
-import  "./CommentFormCSS.css"
-import{addComment} from "./AC"
+import  "./styles.css"
+import{addComment} from "../../AC"
 import {connect} from "react-redux"
 class CommentForm extends React.Component
 {
@@ -23,12 +23,12 @@ class CommentForm extends React.Component
                         <h2>Add comment</h2>
                     </li>
                     <li>
-                        <label for="name">User:</label> 
+                        <label htmlFor="name">User:</label> 
                         <input  value={this.state.user} name="name" onChange={this.handlerChange("user") } 
                                 className={this.getClassName("user")} />
                     </li>
                     <li>
-                        <label for="commentText">Comment text:</label> 
+                        <label htmlFor="commentText">Comment text:</label> 
                         <textarea   value={this.state.text} name="commentText" onChange={this.handlerChange("text")} 
                                     className={this.getClassName("text")} cols="40" rows="6"/>
                     </li>

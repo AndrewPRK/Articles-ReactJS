@@ -2,8 +2,8 @@ import React from "react"
 import Select from "react-select"
 import "react-select/dist/react-select.css"
 import {connect} from "react-redux"
-import {changeSelection} from "../AC"
-import {mapToArr} from "../helpers"
+import {changeSelection} from "../../AC"
+import {mapToArr} from "../../helpers"
 class FilterSelect extends React.Component
 {
    /* state = {

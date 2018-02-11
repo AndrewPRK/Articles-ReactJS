@@ -1,11 +1,12 @@
 import React from "react"
-import Comment from "./Comment"
+import Comment from "../Comment/Comment"
 import PropTypes from "prop-types"
-import ToggleOpen from "./ToggleOpen"
-import CommentForm from "./CommentForm"
-import {loadComments} from "./AC"
+import ToggleOpen from "../ToggleOpen"
+import CommentForm from "../CommentForm/CommentForm"
+import {loadComments} from "../../AC"
 import {connect} from "react-redux"
-import Loader from ".//Loader"
+import Loader from "../Loader/Loader"
+import "./styles.css"
 class CommentList extends React.Component 
 {
     componentWillReceiveProps({Open,article,loadComments})

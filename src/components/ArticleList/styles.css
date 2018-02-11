@@ -1,0 +1,39 @@
+.articles-container {
+    position: absolute;
+    width:90%;
+    left:10%;
+    top:0;
+    height: 100%
+}
+.articles-titels-container {
+    background-color: #2c2b5d;
+    width: 20%;
+    position: fixed;
+    border-left: solid 1px white;
+    height: 100%;
+}
+.articles-titels-container a
+{
+    color:white;
+    text-decoration: none;
+}
+.articles-titels-container ul li {
+    list-style-type: none;
+    padding: 5px 15px;
+    border-bottom: solid 1px white;
+}
+.articles-titels-container ul li:first-child {
+    border-top: solid 1px white;
+}
+.articles-titels-container ul li:hover {
+    background-color: teal;
+    transition: all 1s ease;
+}
+.articles-tytles-loader, .select-article {
+    position: absolute;
+    left: 45%;
+    top:150px;
+}
+.select-article {
+    left: 52%;
+}
